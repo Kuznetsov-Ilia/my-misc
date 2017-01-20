@@ -1,0 +1,31 @@
+{
+  "1": " --presets=babel-preset-normal-please",
+  "name": "my-misc",
+  "version": "1.0.6",
+  "description": "",
+  "main": "index.js",
+  "jsnext:main": "index.es",
+  "scripts": {
+    "start": "npm run index & npm run form & wait && npm version patch && npm run deploy",
+    "index": "rollup -i utils.es | babel > utils.js",
+    "form": "rollup -i form.es | babel > form.js",
+    "deploy": "git add . && git commit -am 'fix' && git push && npm publish"
+  },
+  "dependencies": {
+    "my-global": "*"
+  },
+  "devDependencies": {
+    "babel-preset-normal-please": "*",
+    "babel-cli": "*",
+    "rollup": "*",
+    "rollup-plugin-node-resolve": "*"
+  },
+  "babel": {
+    "presets": [
+      "babel-preset-normal-please"
+    ]
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
