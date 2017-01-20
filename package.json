@@ -1,29 +1,26 @@
 {
-  "1": " --presets=babel-preset-normal-please",
   "name": "my-misc",
   "version": "1.0.6",
   "description": "",
-  "main": "index.js",
-  "jsnext:main": "index.es",
+  "main": "utils/index.js",
+  "jsnext:main": "utils/index.es",
   "scripts": {
-    "start": "npm run index & npm run form & wait && npm version patch && npm run deploy",
-    "index": "rollup -i utils.es | babel > utils.js",
-    "form": "rollup -i form.es | babel > form.js",
-    "deploy": "git add . && git commit -am 'fix' && git push && npm publish"
+    "start": "npm run utils & npm run form & npm run dom & npm run dom4 & wait && npm run deploy",
+    "utils": "rollup -i utils/index.es -c | babel > utils/index.js",
+    "form": "rollup -i form/index.es -c | babel > form/index.js",
+    "dom": "rollup -i dom/index.es -c | babel > dom/index.js",
+    "dom4": "rollup -i dom/4.es -c | babel > dom/4.js",
+    "deploy": "git add . && git commit -am 'fix' && git push && npm version patch && npm publish"
   },
   "dependencies": {
-    "my-global": "*"
   },
   "devDependencies": {
-    "babel-preset-normal-please": "*",
     "babel-cli": "*",
+    "babel-plugin-external-helpers": "^6.22.0",
+    "babel-preset-es2015": "^6.22.0",
     "rollup": "*",
+    "rollup-plugin-babel": "^2.7.1",
     "rollup-plugin-node-resolve": "*"
-  },
-  "babel": {
-    "presets": [
-      "babel-preset-normal-please"
-    ]
   },
   "keywords": [],
   "author": "",

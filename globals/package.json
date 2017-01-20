@@ -1,0 +1,33 @@
+{
+  "name": "my-misc-globals",
+  "version": "2.0.9",
+  "description": "",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "bro": "rollup -i bro.js -f cjs -o bro.js",
+    "notbro": "rollup -i notbro.js -f cjs -o notbro.js",
+    "start": "npm run bro | npm run notbro",
+    "deploy": "git add . && git commit -am 'fix' && git push && npm publish"
+  },
+  "dependencies": {
+    "jsdom": "*"
+  },
+  "devDependencies": {
+    "rollup": "*"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/QiV/q-global.git"
+  },
+  "files": [ "bro.js", "bro.es", "notbro.js", "notbro.es" ],
+  "main": "notbro.js",
+  "jsnext:main": "bro.es",
+  "browser": "bro.js",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/QiV/q-global/issues"
+  },
+  "homepage": "https://github.com/QiV/q-global#readme"
+}
