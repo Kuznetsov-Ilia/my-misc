@@ -5,7 +5,7 @@ var html$1 = document.documentElement;
 var _window = self || window;
 var head = document.head || document.getElementsByTagName('head')[0];
 
-var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) {
+var _typeof$1 = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) {
   return typeof obj;
 } : function (obj) {
   return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj;
@@ -13,7 +13,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 
 // inherit.js https://gist.github.com/RubaXa/8857525
 function isObject(value) {
-  return (typeof value === 'undefined' ? 'undefined' : _typeof(value)) === 'object' && value !== null;
+  return (typeof value === 'undefined' ? 'undefined' : _typeof$1(value)) === 'object' && value !== null;
 }
 function isFunction(value) {
   return typeof value === 'function';
@@ -45,6 +45,12 @@ function keys(o) {
   }
   return [];
 }
+
+var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) {
+  return typeof obj;
+} : function (obj) {
+  return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj;
+};
 
 /*navigator,*/
 var Np = (_window.Node || _window.Element).prototype;

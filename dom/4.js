@@ -21,15 +21,15 @@ var indexOf = ArrayPrototype.indexOf;
 var splice = ArrayPrototype.splice;
 var join = ArrayPrototype.join;
 var push = ArrayPrototype.push;
-var defineProperty$$1 = Object.defineProperty;
+var defineProperty = Object.defineProperty;
 var NodePrototype = (_window.Node || _window.Element).prototype;
 var ElementPrototype = _window.Element.prototype;
 var SVGElement = _window.SVGElement;
 var classListDescriptor = {
-  get: function get$$1() {
+  get: function get() {
     return new DOMTokenList(this);
   },
-  set: function set$$1() {}
+  set: function set() {}
 };
 var trim = /^\s+|\s+$/g;
 var spaces = /\s+/;
@@ -88,7 +88,7 @@ DOMTokenList.prototype = {
 };
 
 if (SVGElement && !(CLASS_LIST in SVGElement.prototype)) {
-  defineProperty$$1(SVGElement.prototype, CLASS_LIST, classListDescriptor);
+  defineProperty(SVGElement.prototype, CLASS_LIST, classListDescriptor);
 }
 
 // http://www.w3.org/TR/dom/#domtokenlist
@@ -96,7 +96,7 @@ if (SVGElement && !(CLASS_LIST in SVGElement.prototype)) {
 // classList in ElementPrototype is false
 // but it's actually there as getter
 if (!(CLASS_LIST in document.documentElement)) {
-  defineProperty$$1(ElementPrototype, CLASS_LIST, classListDescriptor);
+  defineProperty(ElementPrototype, CLASS_LIST, classListDescriptor);
 } else {
   // iOS 5.1 and Nokia ASHA do not support multiple add or remove
   // trying to detect and fix that in here

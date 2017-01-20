@@ -79,7 +79,7 @@ function result(object, key) {
     return isFunction(value) ? object[key]() : value;
   }
 }
-function inherits$$1(protoProps, staticProps) {
+function inherits(protoProps, staticProps) {
   // Helper function to correctly set up the prototype chain, for subclasses.
   // Similar to `goog.inherits`, but uses a hash of prototype properties and
   // class properties to be extended.
@@ -298,7 +298,7 @@ function loader(src) {
 }
 
 var slice = Array.prototype.slice;
-function toArray$$1(smth) {
+function toArray(smth) {
   return slice.call(smth);
 }
 
@@ -374,7 +374,7 @@ exports.decl = decl;
 exports.diff = diff;
 exports.encode = encode;
 exports.extend = extend;
-exports.inherits = inherits$$1;
+exports.inherits = inherits;
 exports.is = is;
 exports.isArray = isArray;
 exports.isEmpty = isEmpty;
@@ -402,6 +402,6 @@ exports.stringHash = stringHash;
 exports.strip_tags = strip_tags;
 exports.throttle = throttle;
 exports.timestamp = timestamp;
-exports.toArray = toArray$$1;
+exports.toArray = toArray;
 exports.toRadix = toRadix;
 
